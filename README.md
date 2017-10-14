@@ -36,7 +36,7 @@ Gait and Posture 33(3): 418-422.
 Loading and viewing the data (MATLAB)
 -----------------------------------------
 
-```
+```matlab
 file_name = 'MUN104L.h5'; 
 I = hdf5read(file_name, '/I'); 
 I = double( I' ); 
