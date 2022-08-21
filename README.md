@@ -53,13 +53,12 @@ Loading and viewing the data (Python)
 
 ```python
 import tables 
-from matplotlib import pyplot 
+import matplotlib.pyplot as plt
 file_name = 'MUN104L.h5' 
-file_id = tables.openFile(file_name, mode='r') 
-I = file_id.getNode('/I').read() 
-file_id.close() 
-pyplot.imshow(I, origin='lower', interpolation='nearest') 
-pyplot.show()
+with tables.open_file(file_name, 'r') as h:
+	I = h.root.I.read()
+plt.imshow(I, origin='lower', interpolation='nearest')
+plt.show()
 ```
 
 
